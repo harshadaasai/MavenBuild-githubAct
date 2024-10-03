@@ -18,13 +18,7 @@ jobs:
         cache: 'maven'
     - name: Build with Maven 
       run: mvn -B package --file pom.xml 
-    - name: connect to LAb and deploy code on tomcat9
-      uses: cross-the-world/ssh-scp-ssh-pipelines@latest
-      with:
-       host: 'mittalsonal04gmsl0045.simplilearnlabs.com'
-       user: 'mittalsonal04gm'
-       pass: 'al04gm0A@ad34w'
-       port: 42006
+    
        connect_timeout: 10s
        first_ssh: |
           sudo curl -I -u admin:119c9af52262c4c894823a4b07f943c1f8 http://localhost:8080/job/Job1/build?token=token1
